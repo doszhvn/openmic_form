@@ -54,7 +54,8 @@
                 </div>
             </div>
 
-            <div class="mb-3">
+            <div class="input-group mb-3">
+                <span class="input-group-text">@</span>
                 <input type="text" name="instagram" class="form-control" placeholder="Instagram" required>
             </div>
 
