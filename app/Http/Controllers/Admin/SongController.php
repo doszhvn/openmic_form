@@ -17,7 +17,11 @@ class SongController extends Controller
      */
     public function index()
     {
-        $songs = Song::with('singer')->paginate(20);
+        $songs = Song::with('singer')
+            ->withCount('singer')
+            ->orderBy('singer_count', "desc")
+            ->paginate(25);
+
         $statistics = [
             "free" => Song::freeSongs()->count(),
             "busy" => Song::busySongs()->count(),

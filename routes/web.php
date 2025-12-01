@@ -19,4 +19,5 @@ Route::get('/singer/form', [\App\Http\Controllers\SingerOrderController::class, 
 Route::group(['prefix' => '/admin'], function () {
     Route::get('/', [\App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.index');
     Route::get('/songs', [\App\Http\Controllers\Admin\SongController::class, 'index'])->name('admin.song.index');
+    Route::get('/phone', [\App\Http\Controllers\Admin\WhatsappPhoneController::class, 'index'])->name('admin.whatsapp_phone.index');
 });

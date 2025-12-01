@@ -49,7 +49,7 @@
                         class="form-control"
                         placeholder="(XXX) XXX-XX-XX"
                         maxlength="15"
-                        pattern="\(\d{3}\) \d{3}-\d{2}-\d{2}">
+                        pattern="\(\d{3}\) \d{3}-\d{2}-\d{2}" required>
                     <input type="hidden" name="phone" id="phone_hidden">
                 </div>
             </div>
@@ -74,6 +74,7 @@
                 style="background-color: #ff7a00; color: white; border: none;">
                 Зарегистрироваться
             </button>
+            @include('singer_form.parts.whatsapp_number')
         </form>
     </div>
 
@@ -104,6 +105,7 @@
                     contentType: false,
                     success: function (response) {
                         $("#formSubmitButton").prop('disabled', true);
+                        $("#singerForm :input").prop("disabled", true);
 
                         // Вставляем ключ из ответа в модалку
                         $("#successModal .modal-body").html(

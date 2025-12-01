@@ -37,4 +37,5 @@ Route::group(['prefix' => '/admin', 'middleware' => ['auth']], function () {
         Route::delete('/destroy/{song}', [\App\Http\Controllers\Admin\SongController::class, 'destroy'])->name('admin.song.destroy');
         Route::delete('/clear', [\App\Http\Controllers\Admin\SongController::class, 'clear'])->name('admin.songs.clear');
     });
+    Route::post('phone/store', [\App\Http\Controllers\Admin\WhatsappPhoneController::class, 'store'])->name('admin.phone.store');
 });

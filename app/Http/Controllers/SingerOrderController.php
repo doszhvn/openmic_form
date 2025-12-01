@@ -14,6 +14,11 @@ class SingerOrderController extends Controller
     public function index()
     {
         $songs = Song::freeSongs()->get();
+
+        if($songs->isEmpty()){
+            return view('singer_form.ups');
+        }
+
         return view('singer_form.index', compact('songs'));
     }
 
