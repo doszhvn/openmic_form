@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/login', [\App\Http\Controllers\AuthController::class, 'index'])->name('login');
 Route::get('/singer/form', [\App\Http\Controllers\SingerOrderController::class, 'index'])->name('singer-form.index');
 
+Route::get('/', function () { return redirect()->route('singer-form.index'); });
+
 Route::group(['prefix' => '/admin'], function () {
     Route::get('/', [\App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.index');
     Route::get('/songs', [\App\Http\Controllers\Admin\SongController::class, 'index'])->name('admin.song.index');
